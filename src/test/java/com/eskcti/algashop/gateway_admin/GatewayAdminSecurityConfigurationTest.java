@@ -15,6 +15,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -56,6 +57,7 @@ class GatewayAdminSecurityConfigurationTest {
 		Mockito.when(redisRateLimiter.getConfig()).thenReturn(new ConcurrentHashMap<>());
 		webTestClient = WebTestClient.bindToServer()
 				.baseUrl("http://localhost:" + port)
+				.responseTimeout(Duration.ofSeconds(30))
 				.build();
 	}
 
