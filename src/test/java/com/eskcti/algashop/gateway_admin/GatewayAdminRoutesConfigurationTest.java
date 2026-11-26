@@ -59,7 +59,7 @@ class GatewayAdminRoutesConfigurationTest {
 				.contains("/api/v1/products", "/api/v1/products/**",
 						"/api/v1/upload-requests", "/api/v1/upload-requests/**");
 		assertThat(predicate(route, "Method").getArgs().values())
-				.containsExactlyInAnyOrder("GET", "POST", "PUT", "DELETE");
+				.containsExactlyInAnyOrder("GET", "POST", "PUT", "DELETE", "OPTIONS");
 	}
 
 	@Test

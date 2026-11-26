@@ -77,12 +77,12 @@ spring:
               uri: lb://product-catalog
               predicates:
                 - Path=/api/v1/products,/api/v1/products/**,/api/v1/upload-requests,/api/v1/upload-requests/**
-                - Method=GET,POST,PUT,DELETE
+                - Method=GET,POST,PUT,DELETE,OPTIONS
             - id: customers-route
               uri: lb://ordering
               predicates:
                 - Path=/api/v1/customers,/api/v1/customers/**
-                - Method=GET
+                - Method=GET,OPTIONS
               filters:
                 - name: CircuitBreaker
                   args:
