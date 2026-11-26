@@ -27,11 +27,6 @@ spring:
         webflux:
           route-refresh-listener:
             enabled: false
-          filter:
-            local-response-cache:
-              enabled: true
-              time-to-live: 1m
-              size: 10MB
           default-filters:
             - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_FIRST
             - name: Retry

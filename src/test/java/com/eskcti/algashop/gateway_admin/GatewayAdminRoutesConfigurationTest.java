@@ -138,16 +138,10 @@ class GatewayAdminRoutesConfigurationTest {
 	}
 
 	@Test
-	void shouldEnableGlobalResponseCache() {
+	void shouldNotEnableGlobalResponseCache() {
 		assertThat(environment.getProperty(
 				"spring.cloud.gateway.server.webflux.filter.local-response-cache.enabled", Boolean.class))
-				.isTrue();
-		assertThat(environment.getProperty(
-				"spring.cloud.gateway.server.webflux.filter.local-response-cache.time-to-live"))
-				.isEqualTo("1m");
-		assertThat(environment.getProperty(
-				"spring.cloud.gateway.server.webflux.filter.local-response-cache.size"))
-				.isEqualTo("10MB");
+				.isNotEqualTo(Boolean.TRUE);
 	}
 
 	@Test

@@ -20,7 +20,6 @@ antes de encaminhar as requisições aos microsserviços.
 ## Resiliência
 
 - **Rate limit** por usuário (`sub` do JWT) com estado no Redis (database `4`).
-- **Cache local de respostas** para requisições `GET` (`1m`, `10MB`, Caffeine).
 - **Timeout** de conexão (`1s`) e de resposta (`5s`) no cliente HTTP do Gateway.
 - **Retry** para `GET/PUT` em `502/500/504` e **Circuit Breaker** nas rotas do `ordering`.
 
